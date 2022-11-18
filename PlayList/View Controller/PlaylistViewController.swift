@@ -9,7 +9,7 @@ import UIKit
 
 class PlaylistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
+    
     @IBOutlet var playlistNameTextField: UITextField!
     
     @IBOutlet var playlistTableView: UITableView!
@@ -19,7 +19,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         playlistTableView.delegate = self
         playlistTableView.dataSource = self
         PlaylistController.shared.loadFromPersistenceStore()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,7 +27,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         playlistTableView.reloadData()
     }
     
-
+    
     @IBAction func addToPlaylistTapped(_ sender: Any) {
         guard let playlistName = playlistNameTextField.text,
               !playlistName.isEmpty else{return}
@@ -57,7 +57,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSongsList" {
             guard let indexPath = playlistTableView.indexPathForSelectedRow,
@@ -66,8 +66,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             destination.playlist = playlist
             
         }
-       
+        
     }
     
-
+    
 }
