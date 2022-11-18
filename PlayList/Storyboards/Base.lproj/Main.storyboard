@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5EY-qF-ndM">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Playlist View Controller-->
+        <scene sceneID="YcK-hz-vFX">
+            <objects>
+                <viewController id="OfF-qU-7K9" customClass="PlaylistViewController" customModule="PlayList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E57-zu-0C6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKh-Yq-XuW">
+                                <rect key="frame" x="0.0" y="91" width="390" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="miw-mt-0ib">
+                                        <rect key="frame" x="19.666666666666657" y="24" width="351" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="left" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add playlist name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0l-LH-wGq">
+                                                <rect key="frame" x="0.0" y="0.0" width="211.66666666666666" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jag-Fk-MFE">
+                                                <rect key="frame" x="221.66666666666669" y="0.0" width="129.33333333333331" height="34"/>
+                                                <color key="backgroundColor" red="0.14475715389999999" green="0.72973695080000001" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Create Playlist" titleAlignment="automatic">
+                                                    <fontDescription key="titleFontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addToPlaylistTapped:" destination="OfF-qU-7K9" eventType="touchUpInside" id="FTh-Py-aU8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96841138601303101" green="0.80028179409985079" blue="0.34554223790432859" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="miw-mt-0ib" secondAttribute="bottom" constant="22" id="EU8-Nn-Hdz"/>
+                                    <constraint firstItem="miw-mt-0ib" firstAttribute="width" secondItem="AKh-Yq-XuW" secondAttribute="width" multiplier="0.9" id="XeJ-2N-I7b"/>
+                                    <constraint firstItem="miw-mt-0ib" firstAttribute="leading" secondItem="AKh-Yq-XuW" secondAttribute="leading" constant="19.670000000000002" id="dIB-M7-7DG"/>
+                                    <constraint firstItem="miw-mt-0ib" firstAttribute="top" secondItem="AKh-Yq-XuW" secondAttribute="top" constant="24" id="fbb-Y2-Act"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fyi-Nb-S70">
+                                <rect key="frame" x="32" y="203" width="358" height="575"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.96841138599999999" green="0.8002817941" blue="0.34554223789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playListCell" textLabel="oQI-g0-efk" detailTextLabel="9Jh-tb-8dF" style="IBUITableViewCellStyleValue1" id="3aa-fd-ira">
+                                        <rect key="frame" x="0.0" y="50" width="358" height="51.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3aa-fd-ira" id="uJg-o4-csI">
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="51.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oQI-g0-efk">
+                                                    <rect key="frame" x="20.000000000000004" y="13" width="37.333333333333336" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Jh-tb-8dF">
+                                                    <rect key="frame" x="286.66666666666669" y="13" width="51.333333333333336" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96841138599999999" green="0.8002817941" blue="0.34554223789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="98c-Wt-arN" kind="show" identifier="toSongsList" id="r4B-IR-ceQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nhc-AS-fsm"/>
+                        <color key="backgroundColor" red="0.1437890902" green="0.73100319000000002" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nhc-AS-fsm" firstAttribute="trailing" secondItem="Fyi-Nb-S70" secondAttribute="trailing" id="2Zq-th-Lws"/>
+                            <constraint firstItem="Fyi-Nb-S70" firstAttribute="leading" secondItem="nhc-AS-fsm" secondAttribute="leading" constant="32" id="ABJ-5q-M9a"/>
+                            <constraint firstItem="AKh-Yq-XuW" firstAttribute="leading" secondItem="nhc-AS-fsm" secondAttribute="leading" id="JYn-Dk-9mf"/>
+                            <constraint firstItem="AKh-Yq-XuW" firstAttribute="top" secondItem="nhc-AS-fsm" secondAttribute="top" id="XzJ-Gm-Ldw"/>
+                            <constraint firstItem="Fyi-Nb-S70" firstAttribute="top" secondItem="AKh-Yq-XuW" secondAttribute="bottom" constant="32" id="Zfu-8i-8dk"/>
+                            <constraint firstItem="nhc-AS-fsm" firstAttribute="bottom" secondItem="Fyi-Nb-S70" secondAttribute="bottom" constant="32" id="v6m-nD-ZwZ"/>
+                            <constraint firstItem="AKh-Yq-XuW" firstAttribute="centerX" secondItem="E57-zu-0C6" secondAttribute="centerX" id="vYz-83-qgs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VZM-gD-gS1"/>
+                    <connections>
+                        <outlet property="playlistNameTextField" destination="n0l-LH-wGq" id="gTQ-DD-Udg"/>
+                        <outlet property="playlistTableView" destination="Fyi-Nb-S70" id="N2P-cs-SRs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lki-n3-Ej0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.8461538461538" y="79.620853080568722"/>
+        </scene>
+        <!--My Playlist-->
+        <scene sceneID="tqr-TG-Zb4">
+            <objects>
+                <tableViewController id="98c-Wt-arN" customClass="SongTableViewController" customModule="PlayList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vKs-FW-r1q">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1437890902" green="0.73100319000000002" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Gcl-xw-sbB">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yaK-Sc-BMg">
+                                    <rect key="frame" x="19.666666666666657" y="22" width="351" height="76"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add song title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3a3-tY-jou">
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add artist name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JsM-Xc-TsR">
+                                            <rect key="frame" x="0.0" y="42" width="351" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <constraints>
+                                <constraint firstItem="yaK-Sc-BMg" firstAttribute="centerY" secondItem="Gcl-xw-sbB" secondAttribute="centerY" id="332-GE-HTJ"/>
+                                <constraint firstItem="yaK-Sc-BMg" firstAttribute="width" secondItem="Gcl-xw-sbB" secondAttribute="width" multiplier="0.9" id="mLw-rm-nje"/>
+                                <constraint firstItem="yaK-Sc-BMg" firstAttribute="centerX" secondItem="Gcl-xw-sbB" secondAttribute="centerX" id="pTO-li-9nW"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" textLabel="mEi-K0-EoJ" detailTextLabel="LZt-hE-QAf" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="yQT-R0-0xp">
+                                <rect key="frame" x="0.0" y="170" width="390" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yQT-R0-0xp" id="ltw-ym-FpI">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mEi-K0-EoJ">
+                                            <rect key="frame" x="19.999999999999996" y="17.666666666666671" width="44.666666666666664" height="31.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="24"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LZt-hE-QAf">
+                                            <rect key="frame" x="20" y="53.333333333333329" width="67" height="26"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14378909018084379" green="0.73100319004296632" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="98c-Wt-arN" id="psu-gB-RCB"/>
+                            <outlet property="delegate" destination="98c-Wt-arN" id="F0B-U7-20b"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Playlist" id="e7H-HE-TYa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uVG-wS-B66">
+                            <connections>
+                                <action selector="addSongButtonTapped:" destination="98c-Wt-arN" id="zkw-ia-IyF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="artistNameTextField" destination="JsM-Xc-TsR" id="upO-hy-Mxe"/>
+                        <outlet property="songTitleTextField" destination="3a3-tY-jou" id="CqA-RZ-gcs"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xtm-Dh-3ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="80.33175355450237"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lhI-2h-hBF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5EY-qF-ndM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KgA-m3-AFq">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OfF-qU-7K9" kind="relationship" relationship="rootViewController" id="rj8-UU-vZ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRl-cO-u44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324.61538461538458" y="79.620853080568722"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
